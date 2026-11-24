@@ -1,3 +1,5 @@
+<img src="assets/icon.svg" width="96" alt="">
+
 # lecternjs
 
 Animated HTML slides that play like a film and advance like slides. A few static files, no build step, works offline.

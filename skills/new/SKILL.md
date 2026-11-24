@@ -22,7 +22,7 @@ Ask in one message. Skip what the user already said.
 
 ## 2. Copy
 
-Copy from the plugin root into the target folder: `index.html`, `deck.css`, `deck.js`, `assets/fonts/`, `scripts/export.py`, `.gitignore`. Do not copy `skills/`, `.claude-plugin/`, `.github/`, `scripts/record_gif.py`, or `README.md`. Stop if the folder exists and is not empty.
+Copy from the plugin root into the target folder: `index.html`, `deck.css`, `deck.js`, `assets/fonts/`, `assets/icon.svg`, `scripts/export.py`, `.gitignore`. Do not copy `skills/`, `.claude-plugin/`, `.github/`, `scripts/record_gif.py`, or `README.md`. Stop if the folder exists and is not empty.
 
 ## 3. Fill
 
