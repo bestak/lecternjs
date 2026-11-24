@@ -17,6 +17,7 @@ Ask in one message. Skip what the user already said.
 - Parts: the story structure (for example hook → problem → solution → ask). Offer one if the user has none.
 - Speakers: name and initials per speaker, or one speaker.
 - Language of the slides.
+- Look: brand colours or a logo, light or dark, a font, a mood (calm, technical, playful), or an example deck or site to match. Default: keep the template theme.
 - Target folder. Default: `./<slug>` in the current directory.
 
 ## 2. Copy
@@ -34,6 +35,7 @@ Edit only `index.html` and the theme block at the top of `deck.css`. Leave `deck
 - `window.DECK.labels`: for a non-English talk, translate the presenter labels. The keys are in the `L` object at the top of `deck.js`.
 - Slides: replace the demo `<section>`s. One `<section class="slide" data-part="…" data-title="…">` per slide. Add `data-who` when there are speakers.
 - Each slide gets `<aside class="notes">` with what to say. Mark each click in the notes with `<em>Click</em>`.
+- `deck.css` theme: set the `:root` colour tokens and the `#stage` background from the look answer. For a light theme, also set `--ink` and `--muted` dark. A new font: put the `.woff2` in `assets/fonts/` and add an `@font-face`, so the deck stays offline. Put a logo in `assets/`.
 - `deck.css`: add one `#stage[data-part=…]` line per part for the background colours. Remove the demo part lines.
 - Remove the `/* demo slides */` CSS block when no slide uses it any more.
 
