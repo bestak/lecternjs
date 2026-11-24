@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "lecternjs",
+  "description": "Animated HTML decks with a presenter window.",
+  "owner": { "name": "bestak" },
+  "plugins": [
+    {
+      "name": "lectern",
+      "description": "Start a new animated HTML deck from the lecternjs template.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

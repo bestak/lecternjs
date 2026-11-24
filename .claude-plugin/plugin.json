@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "lectern",
+  "version": "1.0.0",
+  "description": "Start a new animated HTML deck from the lecternjs template.",
+  "author": { "name": "bestak" },
+  "repository": "https://github.com/bestak/lecternjs",
+  "license": "MIT"
+}

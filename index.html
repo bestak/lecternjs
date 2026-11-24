@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>lecternjs · demo</title>
+<link rel="stylesheet" href="deck.css">
+<script>
+window.DECK = {
+  parts: {
+    intro: { name: 'Intro', min: 1 },
+    demo: { name: 'Demo', min: 2 },
+    close: { name: 'Close', min: 1 },
+  },
+  speakers: {},
+  labels: {},
+}
+</script>
+</head>
+<body>
+<div id="wrap">
+<div id="stage">
+
+<!-- 1 · title -->
+<section class="slide" data-part="intro" data-title="Title">
+  <div class="mark"></div>
+  <h1>Slides that move<br>like <span class="a">a film</span></h1>
+  <div class="lead muted rise" style="--d:1.2;margin-top:36px">and advance like slides.</div>
+  <aside class="notes">
+  <div class="cue">pause · look at the room</div>
+  <ul>
+    <li>The first click starts the timer.</li>
+    <li>Press <em>P</em> for this presenter window.</li>
+  </ul>
+  </aside>
+</section>
+
+<!-- 2 · steps -->
+<section class="slide" data-part="intro" data-title="Steps">
+  <div class="mark corner"></div>
+  <div class="eyebrow">One click, one beat</div>
+  <h2>Reveal step by step</h2>
+  <div class="list">
+    <div class="item" data-s="1"><b>01</b>Add <span class="b">data-s="1"</span></div>
+    <div class="item" data-s="2"><b>02</b>It appears at click 2 <span class="note" data-hide="3">· this hides at click 3</span></div>
+    <div class="item pop" data-s="3"><b>03</b>Or pops in with <span class="a">.pop</span></div>
+  </div>
+  <aside class="notes">
+  <ul>
+    <li><em>Click</em> first item.</li>
+    <li><em>Click</em> second item.</li>
+    <li><em>Click</em> third item pops. The grey note hides.</li>
+  </ul>
+  </aside>
+</section>
+
+<!-- 3 · numbers -->
+<section class="slide" data-part="demo" data-title="Numbers">
+  <div class="eyebrow">Count-up</div>
+  <h2>Numbers that roll</h2>
+  <div class="stats">
+    <div class="stat" data-s="1"><b data-count="3">0</b><span>files: html, css, js</span></div>
+    <div class="stat" data-s="2"><b data-count="0">0</b><span>build steps</span></div>
+    <div class="stat" data-s="3"><b><span data-count="100">0</span>%</b><span>offline, one folder</span></div>
+  </div>
+  <aside class="notes">
+  <ul>
+    <li>Numbers format with <em>&lt;html lang&gt;</em>.</li>
+  </ul>
+  </aside>
+</section>
+
+<!-- 4 · typing -->
+<section class="slide center" data-part="demo" data-title="Typing">
+  <div class="eyebrow">Plain HTML</div>
+  <h2>A slide is a section</h2>
+  <div class="code" data-s="0" data-type style="text-align:left"><span class="t">&lt;section</span> <span class="k">class</span>=<span class="v">"slide"</span> <span class="k">data-part</span>=<span class="v">"demo"</span><span class="t">&gt;</span>
+  <span class="t">&lt;h2&gt;</span>A slide is a section<span class="t">&lt;/h2&gt;</span>
+  <span class="t">&lt;p</span> <span class="k">data-s</span>=<span class="v">"1"</span><span class="t">&gt;</span>Shows at click 1<span class="t">&lt;/p&gt;</span>
+  <span class="t">&lt;aside</span> <span class="k">class</span>=<span class="v">"notes"</span><span class="t">&gt;</span>Speaker notes<span class="t">&lt;/aside&gt;</span>
+<span class="t">&lt;/section&gt;</span></div>
+  <aside class="notes">
+  <ul>
+    <li>Any AI edits this format well. It is plain text.</li>
+  </ul>
+  </aside>
+</section>
+
+<!-- 5 · close -->
+<section class="slide center" data-part="close" data-title="Keys">
+  <div class="mark"></div>
+  <h1>Your turn</h1>
+  <div class="keys rise" style="--d:1">
+    <kbd>→<small>next</small></kbd><kbd>←<small>back</small></kbd><kbd>P<small>presenter</small></kbd>
+    <kbd>F<small>fullscreen</small></kbd><kbd>B<small>black</small></kbd><kbd>T<small>reset timer</small></kbd>
+  </div>
+  <aside class="notes"><ul><li>Questions.</li></ul></aside>
+</section>
+
+<div id="progress"></div>
+</div>
+</div>
+<div id="pp"></div>
+<div id="black"></div>
+<script src="deck.js"></script>
+</body>
+</html>
