@@ -17,7 +17,7 @@ Use PowerPoint if people who don't code need to co-edit the deck.
 ## Start
 
 - **GitHub:** click *Use this template*, or run `gh repo create my-talk --template bestak/lecternjs --clone`.
-- **Claude Code:** `/plugin marketplace add bestak/lecternjs`, `/plugin install lectern@lecternjs`, then `/lectern:new`. Claude asks for the talk details and builds the skeleton. With [motion-design](https://github.com/bestak/bestak-skills) installed, it uses that skill for motion.
+- **Claude Code:** `/plugin marketplace add bestak/lecternjs`, `/plugin install lectern@lecternjs`, then `/lectern:new`. Claude asks for the talk details and builds the skeleton.
 
 ## Present
 
