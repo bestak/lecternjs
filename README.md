@@ -17,6 +17,7 @@ Use PowerPoint if people who don't code need to co-edit the deck.
 ## Start
 
 - **GitHub:** click *Use this template*, or run `gh repo create my-talk --template bestak/lecternjs --clone`.
+  The copy includes files for this repo only. Delete them: `.claude-plugin/`, `skills/`, `.github/`, `scripts/record_gif.py`.
 - **Claude Code:** `/plugin marketplace add bestak/lecternjs`, `/plugin install lectern@lecternjs`, then `/lectern:new`. Claude asks for the talk details and builds the skeleton.
 
 ## Present
