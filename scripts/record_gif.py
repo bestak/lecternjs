@@ -27,7 +27,7 @@ async def record(out: Path, hold: float) -> tuple[Path, float]:
         started = time.monotonic()
         page.on("pageerror", lambda e: print("pageerror:", e))
         await page.goto((ROOT / "index.html").as_uri())
-        await page.evaluate("document.fonts.ready")
+        await page.evaluate("document.fonts.ready.then(() => 0)")
         await page.wait_for_timeout(300)
         skip = time.monotonic() - started
         await page.wait_for_timeout(hold * 1500)

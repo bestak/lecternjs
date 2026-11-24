@@ -1,6 +1,6 @@
 # lecternjs
 
-Animated HTML slides that play like a film and advance like slides. Three files, no build step, works offline.
+Animated HTML slides that play like a film and advance like slides. A few static files, no build step, works offline.
 
 ![Demo deck clicking through its slides](.github/media/demo.gif)
 
@@ -30,11 +30,11 @@ Open `index.html` in Chrome.
 | P | Presenter window. Keys work in both windows. |
 | F | Fullscreen |
 | B or . | Black screen |
-| R | Replay the slide's videos |
+| R | Replay the slide: restart videos, rerun `data-enter` |
 | T | Reset the timer |
 | Home | First slide |
 
-The timer starts at the first click. The URL hash (`#3.2`) keeps the slide and the step across reloads.
+The mouse pointer is hidden on the main window. The timer starts at the first click. The URL hash (`#3.2`) keeps the slide and the step across reloads.
 
 ![Presenter window](.github/media/presenter.png)
 

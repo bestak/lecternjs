@@ -149,9 +149,11 @@ const KEYS = {
   b: 'black', '.': 'black', r: 'replay', t: 'timer',
 }
 addEventListener('keydown', (e) => {
-  const cmd = KEYS[e.key]
-  if (e.key === 'f') document.documentElement.requestFullscreen?.()
-  if (e.key === 'p' && !presenter) peer = open(location.pathname + '?presenter', 'presenter', 'width=1400,height=820')
+  if (e.metaKey || e.ctrlKey || e.altKey) return
+  const key = e.key.length === 1 ? e.key.toLowerCase() : e.key
+  const cmd = KEYS[key]
+  if (key === 'f') document.documentElement.requestFullscreen?.()
+  if (key === 'p' && !presenter) peer = open(location.pathname + '?presenter', 'presenter', 'width=1400,height=820')
   if (!cmd) return
   e.preventDefault()
   presenter ? opener?.postMessage({ cmd }, '*') : command(cmd)
@@ -159,9 +161,9 @@ addEventListener('keydown', (e) => {
 addEventListener('click', () => (presenter ? opener?.postMessage({ cmd: 'next' }, '*') : next()))
 addEventListener('message', (e) => {
   const d = e.data
-  if (d.cmd === 'hello') { peer = e.source; send({ state: cur, t0 }) }
-  else if (d.cmd) command(d.cmd)
-  if (d.state && (presenter || preview)) { t0 = d.t0; go(d.state.i, d.state.s) }
+  if (d?.cmd === 'hello') { peer = e.source; send({ state: cur, t0 }) }
+  else if (d?.cmd) command(d.cmd)
+  if (d?.state && (presenter || preview)) { t0 = d.t0; go(d.state.i, d.state.s) }
 })
 function send(msg) {
   if (peer && !peer.closed) peer.postMessage(msg, '*')
@@ -200,7 +202,10 @@ if (presenter) {
   f.onload = showNext
   document.body.append(f, Object.assign(document.createElement('div'), { id: 'handoff' }))
   setInterval(panel, 500)
-  opener?.postMessage({ cmd: 'hello' }, '*')
+  // re-handshake so a reloaded main window finds this window again
+  const hello = () => opener?.postMessage({ cmd: 'hello' }, '*')
+  hello()
+  setInterval(hello, 2000)
 }
 document.body.classList.toggle('still', presenter || preview)
 document.querySelectorAll('.slide h1, .slide h2').forEach((h) => {

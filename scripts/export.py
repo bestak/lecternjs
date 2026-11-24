@@ -25,7 +25,7 @@ async def capture(shots: Path, beats: bool, wait: float) -> list[tuple[Path, str
         page = await browser.new_page(viewport={"width": 1920, "height": 1080})
         page.on("pageerror", lambda e: print("pageerror:", e))
         await page.goto((ROOT / "index.html").as_uri() + "?preview")
-        await page.evaluate("document.fonts.ready")
+        await page.evaluate("document.fonts.ready.then(() => 0)")
         n = await page.evaluate("slides.length")
         for i in range(n):
             last = await page.evaluate(f"steps[{i}]")
